@@ -1,0 +1,33 @@
+import pandas as pd
+
+df = pd.DataFrame([[1,0,0,0], [0,0,1,0]])
+print(df)
+
+# print("\n")
+#
+# print(df == 0)
+#
+# print("\n")
+#
+# #print((df == 0).any(axis=0))
+#
+# print("\n")
+#
+# print(df.loc[:, (df == 0).any(axis=)])
+
+#todo metodo2
+
+print("\n")
+print(df.columns[(df == 0).all()])
+print("\n")
+print(df.loc[:, (df == 0).all()])
+
+
+
+####
+
+import pandas as pd
+
+read_file = pd.read_csv(r'C:\Users\Lucas\PycharmProjects\pythonProject\Python_Merge2Excel\saida.csv', sep=';', encoding ='latin-1', engine='python')
+#read_file = pd.read_csv(r'C:\Users\Lucas\PycharmProjects\pythonProject\Python_Merge2Excel\saida.csv', encoding='latin-1')
+read_file.to_excel(r'C:\Users\Lucas\PycharmProjects\pythonProject\11.xlsx', index=None, header=True, engine='openpyxl')
